@@ -1,40 +1,36 @@
-def run():
+def Run_list_o_matic():
     listt=["cat","dog","cat"]
 
     while listt:
-        print("Look at the animal ",listt)
-        if "" in listt:
-            print("Goodbuy!")
+        if not listt:
+            return print("Goodbye!")
         else:
-            inputData=input("enter the name of an animal:")
-            if inputData == "Quit":
-                print("Goodbuy!")
+            print("\nlook at all the animals ",listt)
+            inputData=input("enter the name of an animal: ")
+            if inputData == "quit":
+                return print("Goodbye!")
                 break
             else:
                 list_o_matic(inputData,listt)
 
 
 def list_o_matic(inputData,listt):
+
     if not inputData:
         x=listt.pop()
-        print(x + " popped from list")
+        return print(x + " popped from list")
         if not listt:
-            print("Goodbuy!")
+            return print("Goodbye!")
 
     else:
         if inputData in listt:
             listt.remove(inputData)
-            print("1 instance of "+inputData+" removed from list")
-            if inputData == "Quit":
-                print("Goodbuy!")
+            return print("1 instance of "+inputData+" removed from list")
         else:
             listt.append(inputData)
-            print("1 instance of "+inputData+" appended to the list")
-            if inputData == "Quit":
-                print("Goodbuy!")
+            return print("1 instance of "+inputData+" appended to list")
 
 
 
 
-if __name__ == '__main__':
-    run()
+Run_list_o_matic()
